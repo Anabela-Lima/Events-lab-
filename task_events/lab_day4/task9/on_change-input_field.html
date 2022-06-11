@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h2>JavaScript HTML Events - on change</h2>
+  <!-- TODO Use onchange event to call the upperCase() function-->
+  
+  Enter a text: <input id = "myText" type="text" id="aText"  onchange= "upperCase()" >  <!-- i added in the onchange event and equated it to our function toUppercase so that when user leaves the input field box, the text changes to uppercase, i also added an id= "mytext" so i can use it as reference inside our function-->
+  <p>When you leave the input field, the text is transformed to upper case.</p>
+
+  <script>
+    function upperCase() {   // we have a function called upperCase
+        
+      /*
+        TODO Implement the function: 
+        change the text inside the input element to upper case.
+      */
+       
+     const theText = document.querySelector("#myText");  // I scan through my document, then use queryselector to get the first element with an id = myText. I store this element in a variable myText.
+ 
+     theText.value = theText.value.toUpperCase(); // the value of this element theText is going to equal to the value in uppercase. 
+
+
+    }
+  </script>
+
+</body>
+
+</html>

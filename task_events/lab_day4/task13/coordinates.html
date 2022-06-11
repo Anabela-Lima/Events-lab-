@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function coordinates(event) {  // a function that takes in an argument of an event 
+            document.querySelector("#msg").innerHTML = `X = "${event.screenX}"<br>Y = "${event.screenY}"`;  // we look in our document for an element with id of msh, we then change ints
+            // text to a string comprising of two variavles- the x and y corrdinate, based on where we click.
+        }  
+
+    </script>
+</head>
+
+<body>
+
+    <!-- when we press mouse down or ovver an element, we call our coordinates function and pass the event of "mousedown", that is the event
+    we also have a few stylistic features: we used a div which is pretty much like a section, we then made it a specific width + height and coloured it blue  -->
+    <div onmousedown="coordinates(event)" style="background-color:royalblue; width:450px;height:200px;"></div> 
+
+    <p>
+        Click the above div, to display the x and y coordinates of the cursor.
+    </p>
+
+    <p id="msg" style="font-size:5em;"></p>
+
+</body>
+
+</html>
+
+<!-- 
+    TODO 
+    try to figure out what to do on your own (based on line 15 and the gif)
+ -->

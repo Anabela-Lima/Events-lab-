@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--javascript-->
+    <script>
+         
+        function resizedImage(image) {   // we have a function, called resizedImage, it takes in an argument named "image"
+
+            image.style.width="150px";   // the function returns an image whose width is styled at 150px
+            image.style.height="150px";  // similarly the image calls the style property to return the image argument at height 150px
+
+            /* 
+                TODO change width and size of the element
+            */
+        }
+
+        function defaultImage(image) {     // we have a second function, called defaultImage, it takes in an argument named "image"
+            image.style.width="300px"     // the function returns an image whose width is styled at 150px
+            image.style.height="300px"   //  similarly the passed in argument "image" calls the style property to return the image styled at height 150px
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h2>JavaScript HTML Events - on mouse over, on mouse out</h2>  <!-- we have a h2 element with some text inside it -->
+
+    
+    <!-- 
+            TODO 
+            - onmouseover: call resizedImage(image) function
+            - onmouseout: call defaultImage(this) function 
+     -->
+
+     <!-- // below we have an image added to our website, we added the onmouseover event and equated it to the function "resizedImage(this)", so that when mouse  pointer is moved onto the image, the image becomes 
+          // resized. We passed in "this" to suggest this image i.e. the link used in src. Similarly, with onmouseout, we equate it to defaultImage- i.e. calling default image with argument this image (i.e. the linked image) to change it back 
+          // to default mode of 300px x 300px when the pointer is moved out of the image
+         -->
+    <img onmouseover="resizedImage(this)" onmouseout="defaultImage(this)" src="https://d8qb5cxd9qhkd.cloudfront.net/employers/logos/import/397-BrightNetwork_CMYK.jpg" alt="Bright" width="300"
+        height="300">
+
+    <p>resizedImage() is triggered when the user moves the mouse pointer over the logo.</p>
+    <p>defaultImage() is triggered when the mouse pointer is moved out of the logo.</p>
+
+</body>
+
+</html>

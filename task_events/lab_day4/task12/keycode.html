@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+  
+
+
+         console.log("press a key to get started!")    
+         
+         setInterval(thefunction,1000) 
+
+
+         myKeys = [];  // an empty array to store the keys that I have pressed
+         function thefunction(){
+         document.onkeypress = function (e) {    // we have a function to define what happens when we press a key
+         
+         if (typeof event !== 'undefined') {   // given that the event (pressing of a key) does not return an undefined result
+         press = event.keyCode;   // the key press is equal to the event keycode i.e. unicode of the  pressed key  - used this because event.whcih is not always supported by all browsers, so we use the event which and eventkeycode in conjunction 
+         }
+         else if (e) {    // if the above fails i.e. the event is undedefined then
+         press = e.which;  // the variable "press" is now equal to the event which i.e still the unicode
+         }
+        
+         myKeys.push(String.fromCharCode(press)); // here I convert the unicode to the actual letters in string form 
+
+         console.log(myKeys) // I then log it to console
+          
+         document.querySelector("#myNumbers").innerHTML = press  // here I scan document for item with id= mynumbers and change its text to equal press variable i.e. the unicode of the pressed key 
+
+        
+          }
+        
+        return false;   // and  if all conditions fail return false
+        };
+ 
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- onkeypress="numberDisplay(element)" -->
+
+   
+    <p>Click on this page, and press a key on your keyboard to display the keycode. See console for an Array with all your pressed keys!</p>
+
+    
+    <img src="https://media1.giphy.com/media/4ww8vM5YOszoJIFAiT/giphy.gif" width = "500", height = "500">
+
+
+    <p id="myNumbers" style="font-size:20em;"     onkeypress="thefunction()"> Click me! </p>  <!-- i added -->
+
+    
+
+</body>
+
+</html>
+
+<!-- 
+    TODO 
+    try to figure out what to do on your own (based on line 13 and the gif)
+ -->

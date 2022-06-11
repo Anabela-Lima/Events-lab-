@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function displayCoordinates(event) {  // we have a function called "dsplayCoordinates" it takes an argument of event
+            /*
+                TODO implement the function:
+                - get x, get y
+                - diplay the values in coorvalues paragraph
+            */
+
+            // getting x and y coordinates
+
+           xCoordinate = event.x;     // obtaining the x coordinate from the event of moving the mouse and ill  store it in a variable called xCoordinate
+           yCoordinate = event.y;     // obtaining the y coordinate from the event of moving the mouse and ill store it in a variable called yCoordinate
+
+           console.log(event)
+           // displaying the values in coorvalues paragraph
+
+            // lets create a variable called  "myCoordinates" variable is a string. Inside that string we have 2 square brackets to define an array 
+            // we then pass in 2 elements for the array - the xcoordiante and y coordinate variables we previously defined
+
+           myCoordinates = `Coordinates: ["${xCoordinate}", "${yCoordinate}"]` // i used the dollar sign and curly braces  ( btw this is called "string interpolation") so that I can reference the variable within the string ``. Otherwise it wouldnt actually embbed the variable- it would be plain text
+
+           // now lets pass it through to the coorvalues paragraph. Ill first call the document and scan for an element with id="coorvalues"
+           // I then want to change the text inside that box,so i will call the innerHTML function and equate that to myCoordinates variable
+
+            document.getElementById("coorvalues").innerHTML = myCoordinates;
+
+        }
+
+        function clearCoor() {        // now here we have a second function called clearCoor that takes no input arguments
+            /*
+                TODO implement the function:
+                - clear coorvalues paragraph
+            */
+
+          // i want this function to clear all my coordinates from the coorvalues paragraph
+          // so again, ill scan my doc, find the element with id that corresponds to coorvalues and change the text to blank by using the  innerHTML and equating LHS to an empty string
+          
+          document.getElementById("coorvalues").innerHTML = "";
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>JavaScript HTML Events - on mouse move, on mouse out</h2>   <!-- a h2 element with some text inside it -->
+    <div id="coordiv" style="width:600px; height:200px; border:1px solid" onmousemove="displayCoordinates(event)" onmouseout="clearCoor()">
+    </div>  <!-- we have a div similar to a section, we define the style of the section, essentially just drawing a box with width, borders etc, we then define the onmousemove event (note this is a javascript variable) by equating it to 
+      our function- we are basically calling the function and passing in an argument of event. Note that event is not just a variable we've defined, its define by javasscript 
+      and will print out a stats e.g. mouse behaviour, etc in the browser. so when we pass in event we get access to all those stats, but our function is what streamlines what we want to extract from that long list of info
+      we were just interested in coordinates so defined that in our function using event.x and event.y -- cherrypicking. Lastly the onmouseout, defines what happens when we move away from that box we define-- equating it to clear coor function will call it and clear our coordinates 
+     from the coorvalues paragraph  -->
+
+    <p>Mouse over the rectangle above, to display the coordinates of your mouse pointer.</p>
+
+    <p id="coorvalues"></p>
+
+</body>
+
+</html>

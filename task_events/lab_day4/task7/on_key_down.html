@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function color(color) {  // we have function called colour that takes in an argument referred to as "color"
+            document.forms[0].myInput.style.background = color; // we scan through out html document and call the first form hence index 0, we then get the input and assign the background colour to equal the colour we passed
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Write a message:<br>
+        <!-- 
+            TODO Use onkeydown and onkeyup events to call the color function
+            onkeydown should change the background to red
+            onkeyup - should change the background to green
+        -->
+
+
+
+        <!--  The Input element represent a typed data field. This is inside a form tag to allow the user to edit the data. we named this input as "myInput" so that 
+               we can use it inside our colour function . 
+
+        we then use the onkeydown event to define the event of the user pressing a key. When this occurs, 
+        we call our color() function and pass in the argument of "hotpink". This should change colour of the form i.e the box 
+        to hotpink, and upon release, it should change it to blue, as defined by the onkeyup event.  -->
+
+        <input type="text" onkeydown="color('hotpink')" onkeyup="color('blue')" name="myInput">
+
+    </form>
+    <p>While typing, when you press a key, the background colour changes to red, when you release the key - the colour changes to green.</p>
+
+</body>
+
+</html>

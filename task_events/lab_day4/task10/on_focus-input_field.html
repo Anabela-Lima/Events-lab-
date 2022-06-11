@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script> 
+    function changeBackgroundColor(element) {  // we have a function called changeBackgroundColor that takees an input argument called element
+      /*
+        TODO
+        Implement the function:
+        change background color to yellow
+      */
+ 
+      element.style.background= "yellow";  // for this element we passed in we call on styles, and background to change the background colour , we then equate it to yellow
+
+    }
+  </script>
+</head>
+
+<body>
+
+  <h2>JavaScript HTML Events - on focus</h2>
+  <!-- TODO Use onfocus event to call the changeBackgroundColor(element) function-->
+  Enter your name: <input type="text" onfocus="changeBackgroundColor(this)">       <!--when we give focus to the input (onfocus) we call the changeBackgroundColor and we pass this element i.e. the input --> 
+
+  <p>When the input field gets focus, the background-color changes</p>
+</body>
+
+</html>

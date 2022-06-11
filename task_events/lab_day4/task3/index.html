@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- change document title-->
+    <title>on load error image</title>
+    <!-- link in our javascript-->
+    <!-- <link rel="stylesheet" href="app.js"> -->
+
+    <script>
+        /* 
+            TODO implement the function called in line 15
+        
+        */
+
+
+        function imgLoadError(){    // we have a function called imgLoadError that takes no arguments
+               
+               alert("Error! image does not exist");
+            
+           }    
+           
+        
+           
+           window.addEventListener("load", imgLoadError)
+           
+           
+    </script>
+
+
+
+
+</head>
+<body>
+    <h2>JavaScript HTML Events - on load: error</h2>   <!-- a h2 element with some text inside-->
+    <img src="non-existing-img.png" onerror="imgLoadError()">  <!-- an image attached, we have a onerror event (this type of error is triggered if an error occurs while loading an external file e.g. doc or image) -->
+    <p>In this example we refer to an image that does not exist, therefore the onerror event occurs (alert box).</p> <!-- a p tag with some text inside it -->
+</body>
+</html>
